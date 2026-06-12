@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineMax - Cartelera de Películas</title>
+  <link rel="stylesheet" href="/css/estilos.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-clapperboard"></i>
+      <h1>CineMax</h1>
+      <span class="tagline">¡La mejor experiencia!</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#comedia">Comedia</a></li>
+        <li><a href="#infantil">Infantil</a></li>
+        <li><a href="#todo-publico">Todo Público</a></li>
+        <li><a href="#jovenes-adultos">Jóvenes y Adultos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero / Introducción -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <h2>¡Vive la magia del cine!</h2>
+        <p>Las mejores películas en cartelera, para todos los gustos y edades.</p>
+        <a href="#comedia" class="btn-hero">Explorar cartelera <i class="fa-solid fa-ticket"></i></a>
+      </div>
+    </section>
+
+    <!-- Sección Comedia -->
+    <section id="comedia" class="categoria-section">
+      <div class="section-header">
+        <i class="fa-solid fa-face-laugh-squint"></i>
+        <h2>Comedia</h2>
+        <p>Diversión asegurada con las mejores comedias</p>
+      </div>
+      <div class="peliculas-grid" id="grid-comedia"></div>
+    </section>
+
+    <!-- Sección Infantil -->
+    <section id="infantil" class="categoria-section">
+      <div class="section-header">
+        <i class="fa-solid fa-child"></i>
+        <h2>Infantil</h2>
+        <p>Para disfrutar en familia</p>
+      </div>
+      <div class="peliculas-grid" id="grid-infantil"></div>
+    </section>
+
+    <!-- Sección Todo Público -->
+    <section id="todo-publico" class="categoria-section">
+      <div class="section-header">
+        <i class="fa-solid fa-users"></i>
+        <h2>Todo Público</h2>
+        <p>Películas para todas las edades</p>
+      </div>
+      <div class="peliculas-grid" id="grid-todo-publico"></div>
+    </section>
+
+    <!-- Sección Jóvenes y Adultos -->
+    <section id="jovenes-adultos" class="categoria-section">
+      <div class="section-header">
+        <i class="fa-solid fa-masks-theater"></i>
+        <h2>Jóvenes y Adultos</h2>
+        <p>Acción, suspenso y emociones fuertes</p>
+      </div>
+      <div class="peliculas-grid" id="grid-jovenes-adultos"></div>
+    </section>
+  </main>
+
+  <!-- Aside con información adicional -->
+  <aside class="info-lateral">
+    <div class="aside-card">
+      <i class="fa-solid fa-percent"></i>
+      <h3>Promociones</h3>
+      <p>🌟 Martes 2x1 en entradas</p>
+      <p>🍿 Combo Palomitas + Bebida: Q35.00</p>
+      <p>🎓 Estudiantes y maestros 15% dcto.</p>
+    </div>
+    <div class="aside-card">
+      <i class="fa-solid fa-calendar-week"></i>
+      <h3>Próximos Estrenos</h3>
+      <p>🎬 Misión Imposible 8 - 20/07</p>
+      <p>🎬 Intensamente 2 - 15/08</p>
+      <p>🎬 Deadpool 3 - 10/09</p>
+    </div>
+    <div class="aside-card">
+      <i class="fa-solid fa-clock"></i>
+      <h3>Horarios Especiales</h3>
+      <p>Funciones matutinas: 30% dcto.</p>
+      <p>Viernes y sábados: Hasta las 2:00 AM</p>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <i class="fa-solid fa-clapperboard"></i>
+        <p>CineMax - Tu mejor opción para disfrutar el séptimo arte</p>
+        <p>📞 Teléfono: +502 5555-1234</p>
+        <p>📧 Email: info@cinemax.com</p>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 CineMax - Todos los derechos reservados | Disfruta del mejor cine</p>
+  </footer>
+
+  <!-- Modal para detalles de la película -->
+  <div id="modal-pelicula" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal">&times;</span>
+      <div class="modal-header">
+        <h3 id="modal-titulo"></h3>
+      </div>
+      <div class="modal-body">
+        <div class="modal-imagen">
+          <img id="modal-imagen" src="" alt="Póster de la película">
+        </div>
+        <div class="modal-info">
+          <p><strong><i class="fa-solid fa-align-left"></i> Descripción:</strong> <span id="modal-descripcion"></span></p>
+          <p><strong><i class="fa-solid fa-tag"></i> Tipo:</strong> <span id="modal-tipo"></span></p>
+          <p><strong><i class="fa-solid fa-clock"></i> Horario:</strong> <span id="modal-horario"></span></p>
+          <p><strong><i class="fa-solid fa-ticket"></i> Precio:</strong> <span id="modal-precio"></span></p>
+        </div>
+      </div>
+      <button class="btn-cerrar-modal">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

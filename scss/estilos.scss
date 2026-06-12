@@ -1,0 +1,597 @@
+@use "sass:color";
+
+// ============================================
+// VARIABLES - PALETA DE CINE
+// ============================================
+$color-primary: #E50914;      // Rojo Netflix/Cine
+$color-secondary: #F5C518;    // Dorado / Amarillo
+$color-dark: #0a0a0a;         // Negro profundo
+$color-darker: #000000;       // Negro absoluto
+$color-card-bg: #141414;      // Fondo tarjetas
+$color-card-hover: #1f1f2a;   // Hover tarjetas
+$color-text: #f5f5f1;         // Texto claro
+$color-text-muted: #b3b3b3;   // Texto gris
+$color-border: #333333;       // Bordes
+$color-overlay: rgba(0, 0, 0, 0.85);
+
+$font-primary: 'Poppins', sans-serif;
+$font-titles: 'Montserrat', sans-serif;
+
+$transition: all 0.3s ease;
+$border-radius: 12px;
+$box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+// ============================================
+// RESET Y ESTILOS GLOBALES
+// ============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  background: $color-dark;
+  color: $color-text;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+// ============================================
+// HEADER - NAVEGACIÓN
+// ============================================
+header {
+  background: linear-gradient(135deg, $color-darker 0%, #1a0000 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 2px solid $color-primary;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 0.6s ease;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    i {
+      font-size: 2.2rem;
+      color: $color-primary;
+      animation: bounce 2s infinite;
+    }
+
+    h1 {
+      font-family: $font-titles;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, $color-primary, $color-secondary);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .tagline {
+      font-size: 0.8rem;
+      color: $color-text-muted;
+      margin-left: 0.5rem;
+      display: none;
+      
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+
+    li a {
+      color: $color-text;
+      text-decoration: none;
+      font-weight: 500;
+      transition: $transition;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color-primary;
+        transition: width 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+// ============================================
+// HERO SECTION
+// ============================================
+.hero {
+  height: 65vh;
+  min-height: 450px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+              url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  .hero-content {
+    animation: fadeInUp 1s ease;
+
+    h2 {
+      font-family: $font-titles;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: $color-text-muted;
+    }
+
+    .btn-hero {
+      background: $color-primary;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: $transition;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      
+      &:hover {
+        background: color.scale($color-primary, $lightness: -10%);
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// SECCIONES DE CATEGORÍAS
+// ============================================
+.categoria-section {
+  padding: 3rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    
+    i {
+      font-size: 2.5rem;
+      color: $color-secondary;
+      margin-bottom: 0.5rem;
+    }
+    
+    h2 {
+      font-family: $font-titles;
+      font-size: 2rem;
+      color: $color-text;
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 25%;
+        width: 50%;
+        height: 3px;
+        background: $color-primary;
+        border-radius: 3px;
+      }
+    }
+    
+    p {
+      color: $color-text-muted;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Grid de películas
+.peliculas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+// Tarjetas de películas
+.pelicula-card {
+  background: $color-card-bg;
+  border-radius: $border-radius;
+  overflow: hidden;
+  transition: $transition;
+  cursor: pointer;
+  border: 1px solid $color-border;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $box-shadow;
+    border-color: $color-primary;
+    
+    .card-imagen img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .card-imagen {
+    overflow: hidden;
+    height: 280px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+  
+  .card-body {
+    padding: 1.2rem;
+    text-align: center;
+    
+    h3 {
+      font-family: $font-titles;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: $color-text;
+    }
+    
+    .btn-ver {
+      background: transparent;
+      border: 2px solid $color-primary;
+      color: $color-primary;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $transition;
+      margin-top: 0.8rem;
+      width: 100%;
+      
+      &:hover {
+        background: $color-primary;
+        color: white;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// ============================================
+// ASIDE LATERAL (INFORMACIÓN ADICIONAL)
+// ============================================
+.info-lateral {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+  padding: 3rem 2rem;
+  background: linear-gradient(180deg, #0f0f0f 0%, $color-darker 100%);
+  margin: 2rem 0;
+  
+  .aside-card {
+    background: $color-card-bg;
+    padding: 1.5rem;
+    border-radius: $border-radius;
+    text-align: center;
+    border-left: 4px solid $color-primary;
+    transition: $transition;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow;
+    }
+    
+    i {
+      font-size: 2rem;
+      color: $color-secondary;
+      margin-bottom: 0.8rem;
+    }
+    
+    h3 {
+      font-family: $font-titles;
+      margin-bottom: 1rem;
+      color: $color-primary;
+    }
+    
+    p {
+      margin: 0.5rem 0;
+      color: $color-text-muted;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// ============================================
+// FOOTER
+// ============================================
+footer {
+  background: $color-darker;
+  padding: 2rem 2rem 1rem;
+  border-top: 1px solid $color-border;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    
+    .footer-info {
+      i {
+        font-size: 1.8rem;
+        color: $color-primary;
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        margin: 0.3rem 0;
+        font-size: 0.85rem;
+        color: $color-text-muted;
+      }
+    }
+    
+    .footer-social a {
+      color: $color-text-muted;
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      transition: $transition;
+      
+      &:hover {
+        color: $color-primary;
+        transform: scale(1.2);
+      }
+    }
+  }
+  
+  .copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #555;
+    padding-top: 1rem;
+    border-top: 1px solid $color-border;
+  }
+}
+
+// ============================================
+// MODAL
+// ============================================
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-overlay;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+  
+  &.active {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: $color-card-bg;
+    border-radius: $border-radius;
+    width: 90%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: scaleUp 0.4s ease;
+    border: 1px solid $color-primary;
+    position: relative;
+    
+    .cerrar-modal {
+      position: absolute;
+      right: 1rem;
+      top: 0.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color: $color-text-muted;
+      transition: $transition;
+      z-index: 10;
+      
+      &:hover {
+        color: $color-primary;
+        transform: rotate(90deg);
+      }
+    }
+    
+    .modal-header {
+      background: $color-primary;
+      padding: 1rem;
+      text-align: center;
+      
+      h3 {
+        font-family: $font-titles;
+        font-size: 1.5rem;
+        color: white;
+      }
+    }
+    
+    .modal-body {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      
+      @media (min-width: 600px) {
+        flex-direction: row;
+      }
+      
+      .modal-imagen {
+        flex: 1;
+        
+        img {
+          width: 100%;
+          max-height: 280px;
+          object-fit: cover;
+          border-radius: 8px;
+          border: 2px solid $color-secondary;
+        }
+      }
+      
+      .modal-info {
+        flex: 1.5;
+        
+        p {
+          margin: 0.8rem 0;
+          font-size: 0.95rem;
+          
+          i {
+            color: $color-primary;
+            width: 28px;
+          }
+          
+          strong {
+            color: $color-secondary;
+          }
+          
+          span {
+            color: $color-text;
+          }
+        }
+      }
+    }
+    
+    .btn-cerrar-modal {
+      display: block;
+      width: calc(100% - 3rem);
+      margin: 0 1.5rem 1.5rem;
+      background: $color-primary;
+      color: white;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $transition;
+      
+      &:hover {
+        background: color.scale($color-primary, $lightness: -10%);
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+// ============================================
+// RESPONSIVE
+// ============================================
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    
+    nav ul {
+      justify-content: center;
+    }
+  }
+  
+  .categoria-section {
+    padding: 2rem 1rem;
+  }
+  
+  .peliculas-grid {
+    gap: 1rem;
+  }
+  
+  .hero .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .info-lateral {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pelicula-card .card-imagen {
+    height: 220px;
+  }
+  
+  .modal .modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+}
