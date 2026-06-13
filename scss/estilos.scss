@@ -1,8 +1,5 @@
 @use "sass:color";
-
-// ============================================
 // VARIABLES - PALETA DE CINE
-// ============================================
 $color-primary: #E50914;      // Rojo Netflix/Cine
 $color-secondary: #F5C518;    // Dorado / Amarillo
 $color-dark: #0a0a0a;         // Negro profundo
@@ -21,9 +18,7 @@ $transition: all 0.3s ease;
 $border-radius: 12px;
 $box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 
-// ============================================
 // RESET Y ESTILOS GLOBALES
-// ============================================
 * {
   margin: 0;
   padding: 0;
@@ -38,9 +33,8 @@ body {
   overflow-x: hidden;
 }
 
-// ============================================
 // HEADER - NAVEGACIÓN
-// ============================================
+
 header {
   background: linear-gradient(135deg, $color-darker 0%, #1a0000 100%);
   padding: 1rem 2rem;
@@ -139,9 +133,7 @@ header {
   50% { transform: translateY(-8px); }
 }
 
-// ============================================
 // HERO SECTION
-// ============================================
 .hero {
   height: 65vh;
   min-height: 450px;
@@ -206,9 +198,7 @@ header {
   }
 }
 
-// ============================================
 // SECCIONES DE CATEGORÍAS
-// ============================================
 .categoria-section {
   padding: 3rem 2rem;
   max-width: 1400px;
@@ -322,9 +312,7 @@ header {
   }
 }
 
-// ============================================
 // ASIDE LATERAL (INFORMACIÓN ADICIONAL)
-// ============================================
 .info-lateral {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -366,9 +354,7 @@ header {
   }
 }
 
-// ============================================
 // FOOTER
-// ============================================
 footer {
   background: $color-darker;
   padding: 2rem 2rem 1rem;
@@ -418,9 +404,7 @@ footer {
   }
 }
 
-// ============================================
 // MODAL
-// ============================================
 .modal {
   display: none;
   position: fixed;
@@ -553,9 +537,7 @@ footer {
   to { transform: scale(1); opacity: 1; }
 }
 
-// ============================================
 // RESPONSIVE
-// ============================================
 @media (max-width: 768px) {
   header {
     flex-direction: column;

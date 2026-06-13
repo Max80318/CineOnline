@@ -1,6 +1,5 @@
-// ============================================
+
 // CLASE PELICULA (Modelo de datos)
-// ============================================
 class Pelicula {
   constructor(id, nombre, descripcion, tipo, horario, precio, imagenUrl) {
     this.id = id;
@@ -17,38 +16,37 @@ class Pelicula {
   }
 }
 
-// ============================================
 // DATA DE PELÍCULAS (4 por categoría)
-// ============================================
+
 const peliculasData = [
-  // COMEDIA (4)
-  new Pelicula(1, 'Supercool', 'Un estudiante de preparatoria intenta perder su virginidad antes de graduarse, desatando situaciones cómicas y embarazosas.', 'Comedia', '15:00, 18:30, 21:15', 45.00, 'https://images.unsplash.com/photo-1522726169676-c7ac7f8a4d34?w=400&h=300&fit=crop'),
-  new Pelicula(2, 'Son como niños', 'Un grupo de amigos se reúne tras la muerte de su entrenador de baloncesto de la infancia y revive su niñez con divertidas consecuencias.', 'Comedia', '14:30, 17:45, 20:30', 45.00, 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=300&fit=crop'),
-  new Pelicula(3, 'Una esposa de mentira', 'Un actor en decadencia finge tener una esposa para conseguir un papel importante, desencadenando enredos cómicos.', 'Comedia', '16:00, 19:15, 22:00', 45.00, 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=400&h=300&fit=crop'),
-  new Pelicula(4, 'Cazafantasmas', 'Cuatro científicos excéntricos inician un negocio de exterminio de fantasmas en Nueva York, combinando ciencia y humor.', 'Comedia', '13:45, 17:00, 20:15', 45.00, 'https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?w=400&h=300&fit=crop'),
+  // COMEDIA
+  new Pelicula(1, 'Supercool', 'Un estudiante de preparatoria intenta perder su virginidad antes de graduarse, desatando situaciones cómicas y embarazosas.', 'Comedia', '15:00, 18:30, 21:15', 45.00, 'https://static.wikia.nocookie.net/doblaje/images/6/68/Superbad2_large.jpg/revision/latest?cb=20211220092710&path-prefix=es'),
+  new Pelicula(2, 'Son como niños', 'Un grupo de amigos se reúne tras la muerte de su entrenador de baloncesto de la infancia y revive su niñez con divertidas consecuencias.', 'Comedia', '14:30, 17:45, 20:30', 45.00, ''),
+  new Pelicula(3, 'Una esposa de mentira', 'Un actor en decadencia finge tener una esposa para conseguir un papel importante, desencadenando enredos cómicos.', 'Comedia', '16:00, 19:15, 22:00', 45.00, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm2xFgDNHjARb6l0OYzBisz2XvuJzEopr4uA&s'),
+  new Pelicula(4, 'Cazafantasmas', 'Cuatro científicos excéntricos inician un negocio de exterminio de fantasmas en Nueva York, combinando ciencia y humor.', 'Comedia', '13:45, 17:00, 20:15', 45.00, 'https://cinepremiere.com.mx/wp-content/uploads/2024/01/ghostbusters-peliculas-cronologia-donde-ver.jpg'),
   
-  // INFANTIL (4)
-  new Pelicula(5, 'Toy Story', 'Los juguetes de Andy cobran vida cuando él no está, liderados por el vaquero Woody y el astronauta Buzz Lightyear.', 'Infantil', '10:00, 12:30, 15:00', 35.00, 'https://images.unsplash.com/photo-1601924439665-9ce4be9cb557?w=400&h=300&fit=crop'),
-  new Pelicula(6, 'Frozen', 'Una princesa valiente debe salvar su reino de un invierno eterno con la ayuda de una simpática muñeca de nieve.', 'Infantil', '11:00, 13:30, 16:00', 35.00, 'https://images.unsplash.com/photo-1544717305-38e9147adce3?w=400&h=300&fit=crop'),
-  new Pelicula(7, 'Mi villano favorito', 'Un supervillano adopta tres niñas huérfanas para sus planes malvados, pero termina descubriendo el verdadero amor.', 'Infantil', '10:30, 13:00, 15:45', 35.00, 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=400&h=300&fit=crop'),
-  new Pelicula(8, 'Buscando a Nemo', 'Un pez payaso cruza todo el océano para encontrar a su hijo perdido, en una aventura llena de emociones.', 'Infantil', '09:30, 12:00, 14:30', 35.00, 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'),
+  // INFANTIL
+  new Pelicula(5, 'Toy Story', 'Los juguetes de Andy cobran vida cuando él no está, liderados por el vaquero Woody y el astronauta Buzz Lightyear.', 'Infantil', '10:00, 12:30, 15:00', 35.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/jvn7wy3RSNEXnFSXLpH2of2LcV6.jpg'),
+  new Pelicula(6, 'Frozen', 'Una princesa valiente debe salvar su reino de un invierno eterno con la ayuda de una simpática muñeca de nieve.', 'Infantil', '11:00, 13:30, 16:00', 35.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/sGNuWC4BwqOB4l0tkbKwLy70tXC.jpg'),
+  new Pelicula(7, 'Mi villano favorito', 'Un supervillano adopta tres niñas huérfanas para sus planes malvados, pero termina descubriendo el verdadero amor.', 'Infantil', '10:30, 13:00, 15:45', 35.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/AsaaPLSfisdFDeasEd9r0GiZVss.jpg'),
+  new Pelicula(8, 'Buscando a Nemo', 'Un pez payaso cruza todo el océano para encontrar a su hijo perdido, en una aventura llena de emociones.', 'Infantil', '09:30, 12:00, 14:30', 35.00, 'https://m.media-amazon.com/images/S/pv-target-images/93070eaf535856645544357f3ad17c626945ec8c0f8c1b707c8fa405728447a2.jpg'),
   
-  // TODO PÚBLICO (4)
-  new Pelicula(9, 'El Rey León', 'Un joven león debe aceptar su destino como rey después de la trágica muerte de su padre, una historia de amor y redención.', 'Todo Público', '11:30, 14:45, 18:00', 40.00, 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=300&fit=crop'),
-  new Pelicula(10, 'Los Increíbles', 'Una familia de superhéroes debe unir fuerzas para salvar al mundo mientras lidia con una vida normal.', 'Todo Público', '12:15, 15:30, 19:00', 40.00, 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&h=300&fit=crop'),
-  new Pelicula(11, 'Up', 'Un anciano viudo cumple su sueño de aventura atando miles de globos a su casa, acompañado por un niño explorador.', 'Todo Público', '10:15, 13:15, 16:30', 40.00, 'https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=400&h=300&fit=crop'),
-  new Pelicula(12, 'Ratatouille', 'Una rata sueña con convertirse en chef y logra cumplir su sueño desde la cocina de un famoso restaurante parisino.', 'Todo Público', '11:45, 14:30, 17:45', 40.00, 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop'),
+  // TODO PÚBLICO
+  new Pelicula(9, 'El Rey León', 'Un joven león debe aceptar su destino como rey después de la trágica muerte de su padre, una historia de amor y redención.', 'Todo Público', '11:30, 14:45, 18:00', 40.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/b0MxU37dNmMwKtoPVYPKOZSIrIn.jpg'),
+  new Pelicula(10, 'Los Increíbles', 'Una familia de superhéroes debe unir fuerzas para salvar al mundo mientras lidia con una vida normal.', 'Todo Público', '12:15, 15:30, 19:00', 40.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/al1jusd4T7JPatZlj4BuYkDDOzr.jpg'),
+  new Pelicula(11, 'Up', 'Un anciano viudo cumple su sueño de aventura atando miles de globos a su casa, acompañado por un niño explorador.', 'Todo Público', '10:15, 13:15, 16:30', 40.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/1N0LtzUueXrlnpL466jQBJ6iAuj.jpg'),
+  new Pelicula(12, 'Ratatouille', 'Una rata sueña con convertirse en chef y logra cumplir su sueño desde la cocina de un famoso restaurante parisino.', 'Todo Público', '11:45, 14:30, 17:45', 40.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/nGUelOVetiRpY2wTBMHTbrTIGYC.jpg'),
   
-  // JÓVENES Y ADULTOS (4)
-  new Pelicula(13, 'Deadpool', 'Un exmercenario convertido en antihéroe con un humor negro y habilidades de regeneración busca venganza.', 'Jóvenes y Adultos', '19:30, 21:45, 23:59', 55.00, 'https://images.unsplash.com/photo-1531259683007-0161f2b6ac86?w=400&h=300&fit=crop'),
-  new Pelicula(14, 'John Wick', 'Un legendario asesino a sueldo sale del retiro para vengar la muerte de su perro, desatando una guerra imparable.', 'Jóvenes y Adultos', '20:00, 22:15, 00:30', 55.00, 'https://images.unsplash.com/photo-1531256379416-9f000e90dacc?w=400&h=300&fit=crop'),
-  new Pelicula(15, 'Mad Max: Fury Road', 'En un futuro postapocalíptico, la guerrera Furiosa y Max huyen de un tirano en una persecución desenfrenada.', 'Jóvenes y Adultos', '19:45, 22:00, 00:15', 55.00, 'https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&h=300&fit=crop'),
-  new Pelicula(16, 'IT', 'Un grupo de adolescentes se enfrenta a una entidad malévola que adopta la forma de un payaso aterrador.', 'Jóvenes y Adultos', '20:30, 22:45, 01:00', 55.00, 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=400&h=300&fit=crop')
+  // JÓVENES Y ADULTOS
+  new Pelicula(13, 'Deadpool', 'Un exmercenario convertido en antihéroe con un humor negro y habilidades de regeneración busca venganza.', 'Jóvenes y Adultos', '19:30, 21:45, 23:59', 55.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/3TUYy0XvhPQBhrXJwRIaOoYFOBO.jpg'),
+  new Pelicula(14, 'John Wick', 'Un legendario asesino a sueldo sale del retiro para vengar la muerte de su perro, desatando una guerra imparable.', 'Jóvenes y Adultos', '20:00, 22:15, 00:30', 55.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/tDl5ac1VJwMRvlgINDCsDCqg9CE.jpg'),
+  new Pelicula(15, 'Mad Max: Fury Road', 'En un futuro postapocalíptico, la guerrera Furiosa y Max huyen de un tirano en una persecución desenfrenada.', 'Jóvenes y Adultos', '19:45, 22:00, 00:15', 55.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/fnY0VRsb31A5RLVCBjuR6EFUlo2.jpg'),
+  new Pelicula(16, 'IT', 'Un grupo de adolescentes se enfrenta a una entidad malévola que adopta la forma de un payaso aterrador.', 'Jóvenes y Adultos', '20:30, 22:45, 01:00', 55.00, 'https://media.themoviedb.org/t/p/w300_and_h450_face/9oERKIVyTWpHNum3STVsAGD4ojz.jpg')
 ];
 
-// ============================================
+
 // CLASE CineController (Controlador principal)
-// ============================================
+
 class CineController {
   constructor(peliculas) {
     this.peliculas = peliculas;
@@ -166,9 +164,6 @@ class CineController {
   }
 }
 
-// ============================================
-// INICIALIZACIÓN DE LA APLICACIÓN
-// ============================================
 document.addEventListener('DOMContentLoaded', () => {
   const app = new CineController(peliculasData);
   
